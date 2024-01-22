@@ -1,0 +1,275 @@
+:root {
+    --fuentePrincipal: 'Poppins', sans-serif;
+    --fuenteHeaders: 'Poppins', sans-serif;
+}
+
+/* Animaciones */
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes desvanecer {
+    0%{
+        opacity: 0;
+    }100%{
+        opacity: 1;
+    }
+}
+
+@keyframes desdeBottom {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+}
+
+@keyframes desdeTop {
+    from {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(100%);
+        opacity: 1;
+    }
+}
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    font-family: var(--fuentePrincipal);
+    font-weight: 200;
+    position: relative;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: var(--fuenteHeaders);
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+h1 {
+    font-size: 3.5rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+h4{
+    font-size: 1.8rem;
+}
+
+p, li {
+    font-weight: 200;
+    font-size: 2.2rem;
+}
+
+a {
+    text-decoration: none;
+    font-size: 1.8rem;
+    color: black;
+}
+
+.btn {
+    border: none;
+    background-color: transparent;
+    padding: 2rem;
+    font-size: 1.6rem;
+    border-radius: 1rem;
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
+.btn-success {
+    background-color: #7FC7D9;
+    transition: background-color .5s ease, color .5s ease;
+}
+
+.btn-success:hover {
+    background-color: #3c6b77;
+    color: white;
+}
+
+.btn-error {
+    background-color: red;
+}
+
+.content-gral{
+    display: none;
+}
+
+/* Componentes principales de la pagina */
+.container {
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+.header {
+    background-color: #280274;
+    padding: 2.5rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100000;
+}
+
+.header-title {
+    color: white;
+}
+
+.header-title h5 {
+    font-size: 2rem;
+    font-weight: 400;
+    padding: 0 2rem;
+}
+
+.header-navs {}
+
+.header-navs a {
+    color: white;
+    margin: 0 1rem;
+}
+
+/* Utilidades generales */
+.padd-2 {
+    padding: 2rem;
+}
+
+.pl-2 {
+    padding-left: 2rem;
+}
+
+.pr-2 {
+    padding-right: 2rem;
+}
+
+.mar-2 {
+    margin: 2rem;
+}
+
+.mt-2 {
+    margin-top: 2rem;
+}
+
+.flex {
+    display: flex;
+    width: 100%;
+}
+
+.f-1 {
+    flex: 1;
+}
+
+.f-2 {
+    flex: 2;
+}
+
+.flex-row {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    .flex-row {
+        flex-direction: row;
+    }
+}
+
+.flex-row.cancel-responsive {
+    flex-direction: row !important;
+}
+
+.flex-column {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.flex-end {
+    justify-content: end;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.space-bt {
+    justify-content: space-between;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.txt-center {
+    text-align: center;
+}
+
+.no-margin {
+    margin: 0;
+}
+
+.img-loader{
+    width: 50%;
+    margin: 0 auto;
+}
+
+.img-loader .img-loader-icon{
+    text-align: center;
+}
+
+.img-loader .img-loader-icon img{
+    width: 50%;
+}
+
+.img-loader .img-loader-text{
+    width: 100%;
+    font-weight: bold;
+    font-size: 4rem;
+    text-align: center;
+    animation: desvanecer .7s ease-in infinite;
+}
+
+/* Clases para aplicar a elementos con javascript */
+.animate-fromBottom{
+    display: none;
+}
+
+.desdeBottom{
+    display: block;
+    animation: desdeBottom 1s ease-in-out;
+}
+
+.desdeTop{
+    animation: desdeTop 1s ease-in-out;
+}
