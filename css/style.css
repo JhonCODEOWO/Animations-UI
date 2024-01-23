@@ -70,7 +70,8 @@ h5 {
 }
 
 h1 {
-    font-size: 3.5rem;
+    font-size: 5rem;
+
 }
 
 h2 {
@@ -263,6 +264,7 @@ a {
 /* Clases para aplicar a elementos con javascript */
 .animate-fromBottom{
     display: none;
+    background-color: #7FC7D9;
 }
 
 .desdeBottom{

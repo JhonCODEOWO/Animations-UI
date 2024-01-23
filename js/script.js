@@ -11,13 +11,31 @@ document.addEventListener('DOMContentLoaded', (evento) => {
     mostrar_ocultarElemento(imgloader);
     mostrar_ocultarElemento(contentMain);
     existeEnViewPort(animateFromBottom, indexAnimate);
+    console.log(window.innerHeight);
 });
 
 window.addEventListener('scroll', function (evento) {
-    if (existeEnViewPort(animateFromBottom, indexAnimate) == false && indexAnimate != animateFromBottom.length - 1) {
-        indexAnimate++;
+    // indexAnimate = aumentaIndexAnimate(indexAnimate, animateFromBottom);
+    let bottomViewPort = window.innerHeight + window.scrollY;
+    console.log(bottomViewPort);
+
+    for (let index = 0; index < animateFromBottom.length; index++) {
+        const element = animateFromBottom[index];
+        let bottom = element.offsetTop + element.offsetHeight;
+        if (bottomViewPort == bottom) {
+            // console.log(`El elemento ${element} ha tocado el bottom del viewport`);
+            indexAnimate++;
+            addAnimation(animateFromBottom[indexAnimate]);
+        }
     }
-    console.log(indexAnimate);
+
+    // if (bottomViewPort === bottom) {
+    //     console.log(`Se ha alcanzado el bottom del objeto`);
+    // }
+    // console.log(window.scrollY + window.innerHeight);
+    // if (existeEnViewPort(animateFromBottom, indexAnimate) == false && indexAnimate != animateFromBottom.length - 1) {
+    //     indexAnimate++;
+    // }
 });
 
 function cargarElementosDom() {
@@ -56,6 +74,7 @@ function mostrar_ocultarElemento(elemento){
 }
 
 //Funcion para las animaciones, pendiente de refactorizar, devuleve un valor verdadero si el elemento está en pantalla, y false si ha sido dejado por el usuario
+
 function existeEnViewPort(elemento, index) {
     try {
         const elementoActual = elemento[index];
@@ -76,4 +95,35 @@ function existeEnViewPort(elemento, index) {
     }
 }
 
+function addAnimation(element) {
+    try {
+        if (!element.classList.contains('desdeBottom')) {
+            element.classList.add('desdeBottom');
+            element.style.display = 'block';
+        }else{
+            element.classList.remove('desdeBottom');
+        }
+    } catch (error) {
+        console.error(`Error en addAnimation: ${error.message}`);
+    }
+}
+
+/**
+ * @param {function(number, nodeList)} iteracion - en base al indice recibido y el nodelist de elementos verifica si el indice es menor o igual a la longitud total del nodelist.
+ * @param {number} index - Variable que debe ser un indice que estes trabajando.
+ * @param {NodeList} elementos - Elementos seleccionados por querySelectorAll.
+ * @returns {number} Retorna un valor entero que es 0 si se ha superado la longitud del nodeList o el valor aumentado del indice si esto no se ha cumplido
+ */
+function aumentaIndexAnimate(index, elementos) {
+    let indexFinal = index;
+    if (indexFinal <= elementos.length - 1) {
+        console.log(`El indice sigue siendo menor o igual a la longitud de elementos seleccionados, valor 
+        actual ${indexFinal}`);
+        indexFinal++;
+        return indexFinal;
+    }else{
+        console.log('El indice ha superado los limites');
+        return indexFinal = 0;
+    }
+}
 //Funcion para determinar si el bottom ha sobrepasado a un elemento
