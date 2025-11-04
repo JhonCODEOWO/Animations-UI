@@ -10,6 +10,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- Estilos para AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 
 <body>
@@ -39,36 +42,37 @@
             <p>En esta página se colocarán animaciones que permiten visualizarse mientras el usuario navega por tu página web, puedes agregarlos para tu index o bien para toda la página, sin embargo ten en cuenta que si bien estas animaciones se ven bien, abusar de ellas podría ocasionar que tu sitio se vea sobrecargado de ellas.</p>
             <p> <strong>Nota: </strong>Los elementos usados aquí no se explicarán, únicamente fueron colocados como parte de la demostración de las animaciones que se pretenden mostrar</p>
 
-            <h2>Dezlizar hacia arriba con desvanecido</h2>
-            <p>Esta animación permite que, cuando un usuario alcance a ver el elemento, este se presente con una animación hacia arriba.</p>
+            <h2>Desvanecido junto con el scroll</h2>
+            <p>Esta animación permite que, cuando un usuario alcance a ver el elemento, este se presente con una animación hacia arriba. Para esta animación se ha usado la libreria ScrollReveal</p>
 
-            <div class="padd-2 animate-fromBottom">
+            <div class="padd-2 animate">
                 <h2>ESTE ES UN CONTENEDOR DE PRUEBA</h2>
                 <P>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis quam rerum doloribus, pariatur exercitationem repudiandae sed repellat dolore asperiores veniam, aut perspiciatis praesentium doloremque libero sint distinctio totam similique fuga tempora eum nam inventore accusantium consequuntur eos? Libero sit molestias, repellat error iure expedita. Rem quibusdam error ab eligendi autem.</P>
             </div>
 
-            <div class="padd-2 animate-fromBottom">
+            <div class="padd-2 animate">
                 <h2>ESTE ES UN CONTENEDOR DE PRUEBA</h2>
                 <P>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis quam rerum doloribus, pariatur exercitationem repudiandae sed repellat dolore asperiores veniam, aut perspiciatis praesentium doloremque libero sint distinctio totam similique fuga tempora eum nam inventore accusantium consequuntur eos? Libero sit molestias, repellat error iure expedita. Rem quibusdam error ab eligendi autem.</P>
             </div>
 
-            <div class="padd-2 animate-fromBottom">
-                <h2>ESTE ES UN CONTENEDOR DE PRUEBA</h2>
-                <P>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis quam rerum doloribus, pariatur exercitationem repudiandae sed repellat dolore asperiores veniam, aut perspiciatis praesentium doloremque libero sint distinctio totam similique fuga tempora eum nam inventore accusantium consequuntur eos? Libero sit molestias, repellat error iure expedita. Rem quibusdam error ab eligendi autem.</P>
+            <h2>Animaciones usando la libreria AOS</h2>
+            <p>Esta libreria admite más tipos de animaciones para tu pagina web</p>
+
+            <div data-aos="fade-right">
+                <h3>TITULO DE PRUEBA</h3>
+                <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo saepe aliquam impedit delectus! Adipisci, laudantium. Molestias corporis nostrum sapiente voluptates possimus nemo debitis quidem non, tenetur natus! Voluptatibus tempore, libero at labore iure iste quisquam quasi dignissimos perspiciatis praesentium, delectus et voluptas porro nam commodi aspernatur assumenda, quas illum eius?</P>
             </div>
 
-            <div class="padd-2 animate-fromBottom">
-                <h2>ESTE ES UN CONTENEDOR DE PRUEBA</h2>
-                <P>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis quam rerum doloribus, pariatur exercitationem repudiandae sed repellat dolore asperiores veniam, aut perspiciatis praesentium doloremque libero sint distinctio totam similique fuga tempora eum nam inventore accusantium consequuntur eos? Libero sit molestias, repellat error iure expedita. Rem quibusdam error ab eligendi autem.</P>
-            </div>
-
-            <div class="padd-2 animate-fromBottom">
-                <h2>ESTE ES UN CONTENEDOR DE PRUEBA</h2>
-                <P>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis quam rerum doloribus, pariatur exercitationem repudiandae sed repellat dolore asperiores veniam, aut perspiciatis praesentium doloremque libero sint distinctio totam similique fuga tempora eum nam inventore accusantium consequuntur eos? Libero sit molestias, repellat error iure expedita. Rem quibusdam error ab eligendi autem.</P>
+            <div data-aos="fade-left">
+                <h3>TITULO DE PRUEBA</h3>
+                <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo saepe aliquam impedit delectus! Adipisci, laudantium. Molestias corporis nostrum sapiente voluptates possimus nemo debitis quidem non, tenetur natus! Voluptatibus tempore, libero at labore iure iste quisquam quasi dignissimos perspiciatis praesentium, delectus et voluptas porro nam commodi aspernatur assumenda, quas illum eius?</P>
             </div>
         </main>
     </div>
 </body>
-<script src="js/script.js"></script>
+<!-- <script src="js/script.js"></script> -->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script src="https://unpkg.com/scrollreveal"></script>
+<script src="js/script2.js"></script>
 
 </html>

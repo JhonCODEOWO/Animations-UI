@@ -4,6 +4,18 @@
 }
 
 /* Animaciones */
+@keyframes scale-up {
+    to{
+        scale: 1.5;
+    }
+}
+
+@keyframes opacity {
+    to{
+        opacity: 0;
+    }
+}
+
 @keyframes rotate {
     100% {
         transform: rotate(360deg);
@@ -261,9 +273,25 @@ a {
     animation: desvanecer .7s ease-in infinite;
 }
 
+.section-fade-away{
+    view-timeline: --scroll;
+}
+
+.section-fade-away h3 span:first-child{
+    animation: opacity both linear;
+    animation-timeline: --scroll;
+    animation-range: exit 20% exit 90%;
+}
+
+.section-fade-away h3 span:last-child{
+    animation: scale-up both ease-in-out, opacity both linear;
+    animation-timeline: --scroll;
+    animation-range: exit 0% exit 100%, exit 50% exit 90%;
+}
+
 /* Clases para aplicar a elementos con javascript */
 .animate-fromBottom{
-    display: none;
+    /* display: none; */
     background-color: #7FC7D9;
 }
 
